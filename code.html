@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6933",
+                        "accent-purple": "#8B3DFF",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full h-[60px] bg-background-dark/80 backdrop-blur-md border-b border-white/10 px-6 lg:px-40 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+<h2 class="text-xl font-bold tracking-tight">DevPortfolio</h2>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">Обо мне</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Проекты</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Контакты</a>
+</nav>
+<button class="bg-gradient-to-r from-primary to-accent-purple px-4 py-2 rounded-lg text-sm font-bold text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+                    Связаться
+                </button>
+</div>
+</header>
+<main class="flex-1 mt-[60px]">
+<section class="flex flex-col items-center justify-center py-20 px-6 lg:px-40 text-center">
+<div class="max-w-[800px] flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<h1 class="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                            Создаю цифровые решения на <span class="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">современном стеке</span>
+</h1>
+<p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+                            Full-stack разработчик, специализирующийся на масштабируемых веб-приложениях и интеграции ИИ.
+                        </p>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-gradient-to-r from-primary to-accent-purple px-8 py-4 rounded-xl text-lg font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+                            Смотреть проекты
+                        </button>
+</div>
+</div>
+</section>
+<section class="py-16 px-6 lg:px-40 bg-white/5">
+<h3 class="text-center text-slate-400 font-bold uppercase tracking-widest text-sm mb-12">Технологический стек</h3>
+<div class="flex flex-wrap justify-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">database</span>
+<span class="text-xs font-bold">Supabase</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">deployed_code</span>
+<span class="text-xs font-bold">React</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">bolt</span>
+<span class="text-xs font-bold">Vite</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">css</span>
+<span class="text-xs font-bold">Tailwind</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">javascript</span>
+<span class="text-xs font-bold">TypeScript</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">psychology</span>
+<span class="text-xs font-bold">AI Integration</span>
+</div>
+<div class="flex flex-col items-center gap-2 group">
+<span class="material-symbols-outlined text-4xl group-hover:text-primary">terminal</span>
+<span class="text-xs font-bold">VS Code</span>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 lg:px-40" id="projects">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold mb-4">Избранные проекты</h2>
+<div class="h-1.5 w-20 bg-gradient-to-r from-primary to-accent-purple rounded-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="group bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="aspect-video bg-slate-700 relative overflow-hidden" data-alt="Modern web application interface for financial analytics">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent-purple/20"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">FinTech Dashboard</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Система управления личными финансами с автоматическим анализом трат с помощью ИИ.</p>
+<button class="w-full py-3 rounded-lg border border-white/10 group-hover:bg-white/5 transition-colors text-sm font-bold flex items-center justify-center gap-2">
+                                Кейс проекта <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="aspect-video bg-slate-700 relative overflow-hidden" data-alt="Collaborative workspace interface with dark mode design">
+<div class="absolute inset-0 bg-gradient-to-br from-accent-purple/20 to-primary/20"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Workspace Pro</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Инструмент для командной работы, объединяющий чат, задачи и облачное хранилище.</p>
+<button class="w-full py-3 rounded-lg border border-white/10 group-hover:bg-white/5 transition-colors text-sm font-bold flex items-center justify-center gap-2">
+                                Кейс проекта <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-slate-800/50 rounded-2xl border border-white/5 overflow-hidden hover:border-primary/50 transition-colors">
+<div class="aspect-video bg-slate-700 relative overflow-hidden" data-alt="E-commerce mobile app design with minimalist aesthetic">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-background-dark/30"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">E-shop Modern</h3>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Маркетплейс с молниеносной скоростью загрузки и кастомным конструктором товаров.</p>
+<button class="w-full py-3 rounded-lg border border-white/10 group-hover:bg-white/5 transition-colors text-sm font-bold flex items-center justify-center gap-2">
+                                Кейс проекта <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="px-12 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent-purple text-lg font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+                        Больше проектов
+                    </button>
+</div>
+</section>
+<section class="py-24 px-6 lg:px-40 bg-white/5" id="contact">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-4xl font-bold mb-4">Связаться со мной</h2>
+<p class="text-slate-400 mb-12">Готов обсудить интересные проекты и возможности сотрудничества.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<a class="flex flex-col items-center gap-4 p-8 rounded-2xl border border-white/5 bg-background-dark hover:border-primary transition-all group" href="#">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">send</span>
+</div>
+<span class="font-bold">Telegram</span>
+</a>
+<a class="flex flex-col items-center gap-4 p-8 rounded-2xl border border-white/5 bg-background-dark hover:border-accent-purple transition-all group" href="#">
+<div class="w-16 h-16 rounded-full bg-accent-purple/10 flex items-center justify-center text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">code</span>
+</div>
+<span class="font-bold">GitHub</span>
+</a>
+<a class="flex flex-col items-center gap-4 p-8 rounded-2xl border border-white/5 bg-background-dark hover:border-primary transition-all group" href="#">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">mail</span>
+</div>
+<span class="font-bold">Gmail</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="py-12 px-6 lg:px-40 border-t border-white/10 bg-background-dark">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-white" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-white" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-white" href="#"><span class="material-symbols-outlined">groups</span></a>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-6 text-slate-400 text-sm">
+<nav class="flex gap-6">
+<a class="hover:text-white" href="#">Политика конфиденциальности</a>
+<a class="hover:text-white" href="#">Условия использования</a>
+</nav>
+<p>© 2026 DevPortfolio. Все права защищены.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
