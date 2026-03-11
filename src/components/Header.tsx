@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
                 </nav>
                 <button
                     onClick={handleContactClick}
-                    className="bg-gradient-to-r from-primary to-accent-purple px-4 py-2 rounded-lg text-sm font-bold text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity"
+                    className="bg-gradient-to-r from-primary to-accent-purple px-4 py-2 rounded-lg text-sm font-bold text-white border-2 border-primary shadow-lg shadow-primary/20 hover:scale-95 hover:shadow-xl hover:shadow-primary/40 active:scale-90 transition-all duration-150"
                 >
                     Связаться
                 </button>

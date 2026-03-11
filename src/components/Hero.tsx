@@ -22,9 +22,8 @@ const Hero: React.FC<HeroProps> = ({ onProjectsClick }) => {
             <div className="max-w-[800px] flex flex-col gap-8">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight text-white">
-                        Создаю цифровые решения на <span
-                            className="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">современном
-                            стеке</span>
+                        Создаю цифровые решения <span
+                            className="inline-block bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent whitespace-nowrap">современном стеке</span>
                     </h1>
                     <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
                         Full-stack разработчик, специализирующийся на масштабируемых веб-приложениях и интеграции
@@ -34,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ onProjectsClick }) => {
                 <div className="flex flex-wrap justify-center gap-4">
                     <button
                         onClick={handleProjectsClick}
-                        className="bg-gradient-to-r from-primary to-accent-purple px-8 py-4 rounded-xl text-lg font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
+                        className="bg-gradient-to-r from-primary to-accent-purple px-8 py-4 rounded-xl text-lg font-bold text-white border-2 border-primary shadow-xl shadow-primary/20 hover:scale-95 hover:shadow-2xl hover:shadow-primary/40 active:scale-90 transition-all duration-150"
                     >
                         Смотреть проекты
                     </button>

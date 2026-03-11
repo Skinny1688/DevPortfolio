@@ -54,7 +54,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                     ></textarea>
                     <button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-primary to-accent-purple text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-bold"
+                        className="w-full bg-gradient-to-r from-primary to-accent-purple text-white py-3 rounded-lg border-2 border-primary font-bold hover:scale-95 hover:shadow-lg hover:shadow-primary/40 active:scale-90 transition-all duration-150"
                     >
                         Отправить
                     </button>

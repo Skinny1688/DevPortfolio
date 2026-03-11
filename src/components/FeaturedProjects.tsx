@@ -27,7 +27,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ projects, onToggleC
             <div className="mt-16 flex justify-center">
                 <button
                     onClick={onToggleCatalog}
-                    className="px-12 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent-purple text-lg font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
+                    className="px-12 py-5 rounded-2xl bg-gradient-to-r from-primary to-accent-purple text-lg font-bold text-white border-2 border-primary shadow-xl shadow-primary/20 hover:scale-95 hover:shadow-2xl hover:shadow-primary/40 active:scale-90 transition-all duration-150"
                 >
                     {isExpanded ? 'Скрыть каталог' : 'Больше проектов'}
                 </button>
