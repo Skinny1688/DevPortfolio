@@ -6,7 +6,7 @@ export interface Project {
     description: string;
     repoLink: string;
     isFeatured: boolean;
-    image: string;
+    image?: string;
 }
 
 export interface Contacts {
