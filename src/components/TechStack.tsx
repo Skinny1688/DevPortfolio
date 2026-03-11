@@ -5,17 +5,28 @@ interface TechStackProps {
 }
 
 const TechStack: React.FC<TechStackProps> = ({ technologies }) => {
+    const techIcons: { [key: string]: string } = {
+        'Supabase': '🗄️',
+        'React': '⚛️',
+        'Vite': '⚡',
+        'Tailwind': '🎨',
+        'TypeScript': '📘',
+        'AI Integration': '🧠',
+        'VS Code': '💻',
+    };
+
     return (
-        <section className="py-12 bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-8">Технологии</h2>
-                <div className="flex flex-wrap justify-center gap-4">
-                    {technologies.map((tech) => (
-                        <span key={tech} className="bg-gray-100 px-4 py-2 rounded-full text-gray-700">
-                            {tech}
-                        </span>
-                    ))}
-                </div>
+        <section className="py-16 px-6 lg:px-40 bg-white/5 bg-background-dark">
+            <h3 className="text-center text-slate-400 font-bold uppercase tracking-widest text-sm mb-12">Технологический стек</h3>
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-70 hover:opacity-100 transition-opacity duration-500">
+                {technologies.map((tech) => (
+                    <div key={tech} className="flex flex-col items-center gap-2 group cursor-pointer">
+                        <div className="text-4xl group-hover:text-primary transition-colors">
+                            {techIcons[tech] || '🔧'}
+                        </div>
+                        <span className="text-xs font-bold text-slate-300">{tech}</span>
+                    </div>
+                ))}
             </div>
         </section>
     );

@@ -1,99 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Header: React.FC = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+interface HeaderProps {
+    onContactClick?: () => void;
+}
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
+const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
     const handleContactClick = (e: React.MouseEvent) => {
         e.preventDefault();
-        // Прокрутка к секции контактов или открытие модального окна
-        const contactsSection = document.getElementById('contacts');
-        if (contactsSection) {
-            contactsSection.scrollIntoView({ behavior: 'smooth' });
-            setIsMenuOpen(false);
+        if (onContactClick) {
+            onContactClick();
+        } else {
+            const contactsSection = document.getElementById('contact');
+            if (contactsSection) {
+                contactsSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 
-    const navLinks = [
-        { text: 'Проекты', href: '#projects' },
-        { text: 'Контакты', href: '#contacts' },
-    ];
-
     return (
-        <header className="fixed top-0 w-full bg-white shadow-sm z-50">
-            <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-                {/* Логотип */}
-                <div className="text-xl font-bold">AI Portfolio</div>
-
-                {/* Десктопное меню */}
-                <div className="hidden md:flex space-x-4 items-center">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="hover:text-blue-600 transition-colors"
-                        >
-                            {link.text}
-                        </a>
-                    ))}
-                    <button
-                        onClick={handleContactClick}
-                        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-                        aria-label="Связаться"
-                    >
-                        Связаться
-                    </button>
+        <header className="fixed top-0 z-50 w-full h-[60px] bg-background-dark/80 backdrop-blur-md border-b border-white/10 px-6 lg:px-40 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                    <span className="text-primary text-3xl">🚀</span>
+                    <h2 className="text-xl font-bold tracking-tight text-white">DevPortfolio</h2>
                 </div>
-
-                {/* Гамбургер-кнопка для мобильных */}
+            </div>
+            <div className="flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-8">
+                    <a className="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#projects">
+                        Проекты
+                    </a>
+                    <a className="text-sm font-medium text-slate-300 hover:text-primary transition-colors" href="#contact">
+                        Контакты
+                    </a>
+                </nav>
                 <button
-                    onClick={toggleMenu}
-                    className="md:hidden flex flex-col space-y-1.5 focus:outline-none"
-                    aria-label="Открыть меню"
+                    onClick={handleContactClick}
+                    className="bg-gradient-to-r from-primary to-accent-purple px-4 py-2 rounded-lg text-sm font-bold text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity"
                 >
-                    <span
-                        className={`w-6 h-0.5 bg-black transition-all ${
-                            isMenuOpen ? 'rotate-45 translate-y-2' : ''
-                        }`}
-                    ></span>
-                    <span
-                        className={`w-6 h-0.5 bg-black transition-all ${
-                            isMenuOpen ? 'opacity-0' : ''
-                        }`}
-                    ></span>
-                    <span
-                        className={`w-6 h-0.5 bg-black transition-all ${
-                            isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                        }`}
-                    ></span>
+                    Связаться
                 </button>
-            </nav>
-
-            {/* Мобильное меню */}
-            {isMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="block py-2 hover:text-blue-600 transition-colors"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {link.text}
-                        </a>
-                    ))}
-                    <button
-                        onClick={handleContactClick}
-                        className="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-                        aria-label="Связаться"
-                    >
-                        Связаться
-                    </button>
-                </div>
-            )}
+            </div>
         </header>
     );
 };

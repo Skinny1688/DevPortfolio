@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface ContactFormProps {
     isOpen: boolean;
@@ -6,19 +6,65 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('Форма отправлена:', formData);
+        setFormData({ name: '', email: '', message: '' });
+        onClose();
+    };
+
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-8 rounded-lg w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-4">Связаться со мной</h2>
-                <form className="space-y-4">
-                    <input type="text" placeholder="Ваше имя" className="w-full border p-2 rounded" />
-                    <input type="email" placeholder="Ваш email" className="w-full border p-2 rounded" />
-                    <textarea placeholder="Сообщение" className="w-full border p-2 rounded h-32"></textarea>
-                    <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Отправить</button>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-slate-800 p-8 rounded-2xl w-full max-w-md border border-white/10">
+                <h2 className="text-2xl font-bold mb-4 text-white">Связаться со мной</h2>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Ваше имя"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-slate-700 border border-white/10 text-white placeholder-slate-400 p-3 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        required
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Ваш email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-slate-700 border border-white/10 text-white placeholder-slate-400 p-3 rounded-lg focus:outline-none focus:border-primary transition-colors"
+                        required
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Сообщение"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full bg-slate-700 border border-white/10 text-white placeholder-slate-400 p-3 rounded-lg focus:outline-none focus:border-primary transition-colors h-32 resize-none"
+                        required
+                    ></textarea>
+                    <button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-primary to-accent-purple text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-bold"
+                    >
+                        Отправить
+                    </button>
                 </form>
-                <button onClick={onClose} className="mt-4 text-gray-500 hover:text-gray-700">Закрыть</button>
+                <button
+                    onClick={onClose}
+                    className="mt-4 w-full text-slate-400 hover:text-white transition-colors"
+                >
+                    Закрыть
+                </button>
             </div>
         </div>
     );

@@ -10,15 +10,26 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ contacts }) => {
     return (
-        <footer id="contacts" className="py-12 bg-gray-900 text-white">
-            <div className="container mx-auto px-4 text-center">
-                <h2 className="text-2xl font-bold mb-4">Контакты</h2>
-                <div className="flex justify-center space-x-6">
-                    <a href={contacts.github} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">GitHub</a>
-                    <a href={contacts.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">Telegram</a>
-                    <a href={`mailto:${contacts.email}`} className="hover:text-blue-400">Email</a>
+        <footer className="py-12 px-6 lg:px-40 border-t border-white/10 bg-background-dark">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div className="flex gap-6">
+                    <a className="text-slate-400 hover:text-white transition-colors" href={contacts.telegram} target="_blank" rel="noopener noreferrer">
+                        <span>✉️</span>
+                    </a>
+                    <a className="text-slate-400 hover:text-white transition-colors" href={contacts.github} target="_blank" rel="noopener noreferrer">
+                        <span>🌐</span>
+                    </a>
+                    <a className="text-slate-400 hover:text-white transition-colors" href={`mailto:${contacts.email}`}>
+                        <span>👥</span>
+                    </a>
                 </div>
-                <p className="mt-8 text-gray-400">© 2026 Все права защищены</p>
+                <div className="flex flex-col md:flex-row items-center gap-6 text-slate-400 text-sm">
+                    <nav className="flex gap-6">
+                        <a className="hover:text-white transition-colors" href="#">Политика конфиденциальности</a>
+                        <a className="hover:text-white transition-colors" href="#">Условия использования</a>
+                    </nav>
+                    <p>© 2026 DevPortfolio. Все права защищены.</p>
+                </div>
             </div>
         </footer>
     );

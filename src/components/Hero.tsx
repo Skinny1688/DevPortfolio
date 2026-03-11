@@ -1,14 +1,44 @@
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+    onProjectsClick?: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onProjectsClick }) => {
+    const handleProjectsClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (onProjectsClick) {
+            onProjectsClick();
+        } else {
+            const projectsSection = document.getElementById('projects');
+            if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center bg-gray-50">
-            <div className="text-center">
-                <h1 className="text-5xl font-bold mb-4">Привет, я разработчик</h1>
-                <p className="text-xl text-gray-600 mb-8">Создаю современные веб-приложения</p>
-                <a href="#contacts" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-                    Связаться
-                </a>
+        <section className="flex flex-col items-center justify-center py-20 px-6 lg:px-40 text-center mt-[60px] min-h-[calc(100vh-60px)] bg-background-dark">
+            <div className="max-w-[800px] flex flex-col gap-8">
+                <div className="flex flex-col gap-4">
+                    <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight text-white">
+                        Создаю цифровые решения на <span
+                            className="bg-gradient-to-r from-primary to-accent-purple bg-clip-text text-transparent">современном
+                            стеке</span>
+                    </h1>
+                    <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">
+                        Full-stack разработчик, специализирующийся на масштабируемых веб-приложениях и интеграции
+                        ИИ.
+                    </p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-4">
+                    <button
+                        onClick={handleProjectsClick}
+                        className="bg-gradient-to-r from-primary to-accent-purple px-8 py-4 rounded-xl text-lg font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
+                    >
+                        Смотреть проекты
+                    </button>
+                </div>
             </div>
         </section>
     );
