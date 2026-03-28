@@ -20,15 +20,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
 
         try {
             await emailjs.send(
-                'YOUR_SERVICE_ID',
-                'YOUR_TEMPLATE_ID',
+                'service_js8ggxa',
+                'template_lumqlvg',
                 {
                     from_name: formData.name,
                     from_email: formData.email,
                     message: formData.message,
                     to_email: 'semennikita52@gmail.com',
                 },
-                'YOUR_PUBLIC_KEY'
+                'OkwGskXf3wsKPfyRk'
             );
             alert('Сообщение успешно отправлено!');
             setFormData({ name: '', email: '', message: '' });
