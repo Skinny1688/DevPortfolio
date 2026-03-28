@@ -5,6 +5,7 @@ export interface Project {
     title: string;
     description: string;
     repoLink: string;
+    liveLink?: string;
     isFeatured: boolean;
     image?: string;
 }

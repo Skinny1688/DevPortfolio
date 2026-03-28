@@ -7,34 +7,11 @@ import type { Project } from './types';
 export const projects: Project[] = [
     {
         id: 1,
-        title: 'FinTech Dashboard',
+        title: 'PWA трекер задач',
         description:
-            'Система управления личными финансами с автоматическим анализом трат с помощью ИИ.',
-        repoLink: 'https://github.com',
+            'PWA приложение для эффективного управления задачами.',
+        repoLink: 'https://github.com/Skinny1688/task-tracker.git',
+        liveLink: 'https://task-tracker-4h0v5p3gk-skinny1688s-projects.vercel.app',
         isFeatured: true,
-    },
-    {
-        id: 2,
-        title: 'Workspace Pro',
-        description:
-            'Инструмент для командной работы, объединяющий чат, задачи и облачное хранилище.',
-        repoLink: 'https://github.com',
-        isFeatured: true,
-    },
-    {
-        id: 3,
-        title: 'E-shop Modern',
-        description:
-            'Маркетплейс с молниеносной скоростью загрузки и кастомным конструктором товаров.',
-        repoLink: 'https://github.com',
-        isFeatured: true,
-    },
-    {
-        id: 4,
-        title: 'Markdown Notes',
-        description:
-            'Редактор заметок с поддержкой Markdown, локальным хранилищем и экспортом в PDF.',
-        repoLink: 'https://github.com',
-        isFeatured: false,
     },
 ];
